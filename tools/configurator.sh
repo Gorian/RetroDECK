@@ -30,6 +30,7 @@ source /app/libexec/global.sh
 #       - Dolphin
 #       - Duckstation
 #       - MelonDS
+#       - OpenBOR
 #       - PCSX2
 #       - PPSSPP
 #       - Primehack
@@ -436,6 +437,7 @@ configurator_open_emulator_dialog() {
   "Dolphin" "Open the Wii & GC emulator Dolphin" \
   "Duckstation" "Open the PSX emulator Duckstation" \
   "MelonDS" "Open the NDS emulator MelonDS" \
+  "OpenBOR" "Open OpenBOR Game Engine" \
   "PCSX2" "Open the PS2 emulator PSXC2" \
   "PPSSPP" "Open the PSP emulator PPSSPP" \
   "Primehack" "Open the Metroid Prime emulator Primehack" \
@@ -468,6 +470,10 @@ configurator_open_emulator_dialog() {
 
   "MelonDS" )
     melonDS
+  ;;
+
+  "OpenBOR" )
+    OpenBOR
   ;;
 
   "PCSX2" )

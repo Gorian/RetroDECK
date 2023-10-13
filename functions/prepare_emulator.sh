@@ -667,6 +667,19 @@ prepare_emulator() {
     fi
   fi
 
+  if [[ "$emulator" =~ ^(openbor|OpenBOR|all)$ ]]; then
+    if [[ "$action" == "reset" ]]; then # Run reset-only commands
+      echo "----------------------"
+      echo "Initializing OpenBOR"
+      echo "----------------------"
+      
+      # TODO: do a proper script
+
+      rm -rf /var/data/OpenBOR
+      unzip "/app/retrodeck/OpenBOR.zip" -d /var/data/OpenBOR
+
+  fi
+
   # Update presets for all emulators after any reset or move
   if [[ ! "$emulator" == "retrodeck" ]]; then
     build_retrodeck_current_presets

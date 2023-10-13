@@ -1181,7 +1181,7 @@
         <platform>odyssey2</platform>
         <theme>odyssey2</theme>
     </system>
-<!-- 
+
     <system>
         <name>openbor</name>
         <fullname>OpenBOR Game Engine</fullname>
@@ -1191,7 +1191,7 @@
         <platform>openbor</platform>
         <theme>openbor</theme>
     </system>
--->
+
 <!--
     <system>
         <name>oric</name>

@@ -1261,6 +1261,28 @@ modules:
 
   # Ryujinx - END
 
+  # OpenBOR - START
+  # https://github.com/DCurrent/openbor/releases/latest
+
+  - name: OpenBOR
+    buildsystem: simple
+    build-commands:
+      # Creating an empty symlink that will point to OpenBOR binary
+      - ln -s /var/data/OpenBOR/bin/OpenBOR ${FLATPAK_DEST}/bin/OpenBOR
+      - mkdir -p "${FLATPAK_DEST}/retrodeck"
+      - ls -lah
+      - chmod +x LINUX/OpenBOR/OpenBOR*.AppImage
+      - LINUX/OpenBOR/OpenBOR*.AppImage --appimage-extract
+      - cp squashfs-root/usr/bin/OpenBOR "${FLATPAK_DEST}/retrodeck"
+      - cd squashfs-root/usr && zip -r "${FLATPAK_DEST}/retrodeck/OpenBOR.zip" bin lib share/doc
+      - cp -rf squashfs-root/usr/share/icons /app/share/
+    sources:
+      - type: archive
+        url: https://github.com/DCurrent/openbor/releases/download/v6391/OpenBOR.v3.0.Build.6391.7z
+        sha256: 780d97470c654f619323929c12627e131bee15f6c103a074d432681b8145314e
+
+  # OpenBOR - END
+
   # External manifests end
 
   - name: retrodeck
